@@ -26,6 +26,6 @@ public class MainActivityTest {
     @Test
     public void validateTextViewContent() {
         EditText nameEditText = (EditText) activity.findViewById(R.id.nameEditText);
-        assertTrue("name".equals(nameEditText.getText().toString()));
+        assertTrue("name".equals(nameEditText.getHint().toString()));
     }
 }
