@@ -17,9 +17,13 @@
         </activity>
         <activity android:name=".ProfileActivity">
             <meta-data
-               android:name="android.support.PARENT_ACTIVITY"
+                android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.epicodus.grocerygetter.MainActivity" />
         </activity>
+        <activity
+            android:name=".ChooseBin"
+            android:label="@string/title_activity_choose_bin"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
