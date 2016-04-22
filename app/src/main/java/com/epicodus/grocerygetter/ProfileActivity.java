@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class ProfileActivity extends AppCompatActivity {
     private TextView mProfileTextView;
-    private String[] produceBin = new String[] {"carrots", "squash", "kale", "apples", "pears", "strawberries", "cilantro", "potatoes", "green beans"};
+    private String[] produceBin = new String[] {"carrots", "squash", "kale", "apples", "pears", "strawberries", "cilantro", "potatoes", "green beans", "lettuce", "shitake mushrooms", "oranges"};
     private ListView mListView;
 
     @Override

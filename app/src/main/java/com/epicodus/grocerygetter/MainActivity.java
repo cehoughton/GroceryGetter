@@ -10,24 +10,26 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity {
     public static final String TAG = MainActivity.class.getSimpleName();
-    private Button mLogInButton;
-    private EditText mNameEditText;
+    @Bind(R.id.logInButton) Button mLogInButton;
+    @Bind(R.id.nameEditText) EditText mNameEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
 
 
-        mNameEditText = (EditText) findViewById(R.id.nameEditText);
-        mLogInButton = (Button) findViewById(R.id.logInButton);
+
           mLogInButton.setOnClickListener(new View.OnClickListener() {
               @Override
               public void onClick(View view) {
                   String name = mNameEditText.getText().toString();
-                  Log.d(TAG, name);
                   Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
                   intent.putExtra("name", name);
                   startActivity(intent);
