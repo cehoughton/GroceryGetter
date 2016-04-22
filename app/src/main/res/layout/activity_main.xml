@@ -36,7 +36,7 @@
         android:inputType="textPersonName"
 
         android:ems="10"
-        android:id="@+id/editText"
+        android:id="@+id/nameEditText"
         android:layout_alignParentTop="true"
         android:layout_alignRight="@+id/textView"
         android:layout_alignEnd="@+id/textView"
@@ -47,10 +47,11 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:id="@+id/editText2"
-        android:layout_below="@+id/editText"
-        android:layout_alignRight="@+id/editText"
-        android:layout_alignEnd="@+id/editText"
+        android:id="@+id/nameEditText2"
         android:hint="password"
-        android:text="dfsd" />
+        android:text="dfsd"
+        android:layout_below="@+id/nameEditText"
+        android:layout_alignRight="@+id/textView"
+        android:layout_alignEnd="@+id/textView"
+        android:layout_marginTop="30dp" />
 </RelativeLayout>
