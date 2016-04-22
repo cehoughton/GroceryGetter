@@ -13,7 +13,7 @@ import android.widget.Toast;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String TAG = MainActivity.class.getSimpleName();
     @Bind(R.id.logInButton) Button mLogInButton;
     @Bind(R.id.nameEditText) EditText mNameEditText;
@@ -24,16 +24,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
+        mLogInButton.setOnClickListener(this);
+    }
 
 
-          mLogInButton.setOnClickListener(new View.OnClickListener() {
-              @Override
-              public void onClick(View view) {
-                  String name = mNameEditText.getText().toString();
-                  Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
-                  intent.putExtra("name", name);
-                  startActivity(intent);
-              }
-          });
+    @Override
+    public void onClick(View v) {
+        if (v == mLogInButton) {
+            String name = mNameEditText.getText().toString();
+            Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+            intent.putExtra("name", name);
+            startActivity(intent);
+        }
+
     }
 }
