@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         if (v == mLogInButton) {
             String name = mNameEditText.getText().toString();
-            Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+            Intent intent = new Intent(MainActivity.this, NewRecipeActivity.class);
             intent.putExtra("name", name);
             startActivity(intent);
         }
