@@ -20,8 +20,9 @@ public class FoodService {
                 .build();
 
         HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.FOOD_BASE_URL).newBuilder();
+        urlBuilder.addQueryParameter("key", API_KEY);
         urlBuilder.addQueryParameter(Constants.FOOD_RECIPE_QUERY_PARAMETER, recipe);
-        urlBuilder.addQueryParameter("appid", API_KEY);
+
         Log.d("tag", ""+urlBuilder);
 
         String url = urlBuilder.build().toString();

@@ -30,4 +30,12 @@
         android:layout_alignRight="@+id/profileTextView"
         android:layout_alignEnd="@+id/profileTextView"
         android:hint="enter ingredient" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Find Recipes"
+        android:id="@+id/findRecipesButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
