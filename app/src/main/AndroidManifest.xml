@@ -22,10 +22,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.MainActivity" />
         </activity>
-        <activity
-            android:name=".ChooseBin"
-            android:label="@string/title_activity_choose_bin"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ui.RecipesActivity" />
         <activity android:name=".ui.NewRecipeActivity"></activity>
     </application>

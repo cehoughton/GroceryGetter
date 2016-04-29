@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.epicodus.grocerygetter.R;
 import com.epicodus.grocerygetter.models.Recipe;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -60,6 +61,7 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.Re
         }
 
         public void bindRecipe(Recipe recipe) {
+            Picasso.with(mContext).load(recipe.getImageUrl()).into(mRecipeImageView);
             mRecipeTitleTextView.setText(recipe.getTitle());
 
 
