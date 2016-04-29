@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.os.Build;
 import android.widget.EditText;
 
+import com.epicodus.grocerygetter.ui.MainActivity;
+import com.epicodus.grocerygetter.ui.ProfileActivity;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

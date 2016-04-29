@@ -1,9 +1,12 @@
-package com.epicodus.grocerygetter;
+package com.epicodus.grocerygetter.ui;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+
+import com.epicodus.grocerygetter.services.FoodService;
+import com.epicodus.grocerygetter.R;
 
 import java.io.IOException;
 

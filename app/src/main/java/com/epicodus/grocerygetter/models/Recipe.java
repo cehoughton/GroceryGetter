@@ -1,4 +1,4 @@
-package com.epicodus.grocerygetter;
+package com.epicodus.grocerygetter.models;
 
 /**
  * Created by Guest on 4/28/16.

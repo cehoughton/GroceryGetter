@@ -1,6 +1,8 @@
-package com.epicodus.grocerygetter;
+package com.epicodus.grocerygetter.services;
 
 import android.util.Log;
+
+import com.epicodus.grocerygetter.Constants;
 
 import okhttp3.Call;
 import okhttp3.Callback;
