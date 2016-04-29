@@ -17,6 +17,6 @@ public Recipe(String title, String imageUrl) {
     }
 
     public String getImageUrl() {
-        return mImageUrl
+        return mImageUrl;
     }
 }

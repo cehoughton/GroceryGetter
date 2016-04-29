@@ -4,8 +4,32 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <ImageView
+        android:layout_width="130dp"
+        android:layout_height="100dp"
+        android:id="@+id/recipeImageView"
+        android:src="@drawable/ggetter"
+        android:scaleType="centerCrop"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:background="#ffffff"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/recipeTitleTextView"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="Recipe Title"
+            android:textColor="@color/colorPrimary"/>
 
 
 
 
-</LinearLayout>
+    </LinearLayout>
+
+    </LinearLayout>

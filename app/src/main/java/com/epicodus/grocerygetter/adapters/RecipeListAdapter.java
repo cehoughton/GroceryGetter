@@ -5,11 +5,16 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.epicodus.grocerygetter.R;
 import com.epicodus.grocerygetter.models.Recipe;
 
 import java.util.ArrayList;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
 
 /**
  * Created by Guest on 4/28/16.
@@ -42,7 +47,22 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.Re
     }
 
     public class RecipeViewHolder extends RecyclerView.ViewHolder {
-        @Bind(R.id.recipeImageView) ImageView mRecipeImageView;
-        @Bind(R.id.recipeTitleTextView) TextView mRecipeTitleTextView;
+        @Bind(R.id.recipeImageView)
+        ImageView mRecipeImageView;
+        @Bind(R.id.recipeTitleTextView)
+        TextView mRecipeTitleTextView;
         private Context mContext;
+
+        public RecipeViewHolder(View itemView) {
+            super(itemView);
+            ButterKnife.bind(this, itemView);
+            mContext = itemView.getContext();
+        }
+
+        public void bindRecipe(Recipe restaurant) {
+            mRecipeTitleTextView.setText(restaurant.getTitle());
+
+
+        }
+    }
 }
