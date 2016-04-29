@@ -59,8 +59,8 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.Re
             mContext = itemView.getContext();
         }
 
-        public void bindRecipe(Recipe restaurant) {
-            mRecipeTitleTextView.setText(restaurant.getTitle());
+        public void bindRecipe(Recipe recipe) {
+            mRecipeTitleTextView.setText(recipe.getTitle());
 
 
         }
