@@ -38,7 +38,7 @@ public class NewRecipeActivity extends AppCompatActivity implements View.OnClick
     public void onClick(View v) {
         if (v == mFindRecipesButton) {
             String recipe = mEditFoodText.getText().toString();
-            Intent intent = new Intent(NewRecipeActivity.this, RecipesActivity.class);
+            Intent intent = new Intent(NewRecipeActivity.this, RecipesListActivity.class);
             intent.putExtra("recipe", recipe);
             startActivity(intent);
         }

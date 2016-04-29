@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 
 import com.epicodus.grocerygetter.adapters.RecipeListAdapter;
 import com.epicodus.grocerygetter.models.Recipe;
@@ -21,8 +20,8 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
-public class RecipesActivity extends AppCompatActivity {
-    public static final String TAG = RecipesActivity.class.getSimpleName();
+public class RecipesListActivity extends AppCompatActivity {
+    public static final String TAG = RecipesListActivity.class.getSimpleName();
     @Bind(R.id.recyclerView)
     RecyclerView mRecyclerView;
     private RecipeListAdapter mAdapter;
@@ -54,13 +53,13 @@ public class RecipesActivity extends AppCompatActivity {
             public void onResponse(Call call, Response response)  {
                 mRecipes = foodService.processResults(response);
 
-                RecipesActivity.this.runOnUiThread(new Runnable() {
+                RecipesListActivity.this.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
                         mAdapter = new RecipeListAdapter(getApplicationContext(), mRecipes);
                         mRecyclerView.setAdapter(mAdapter);
                         RecyclerView.LayoutManager layoutManager =
-                                new LinearLayoutManager(RecipesActivity.this);
+                                new LinearLayoutManager(RecipesListActivity.this);
                         mRecyclerView.setLayoutManager(layoutManager);
                         mRecyclerView.setHasFixedSize(true);
                     }
