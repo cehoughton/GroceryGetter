@@ -2,6 +2,8 @@ package com.epicodus.grocerygetter.models;
 
 import org.parceler.Parcel;
 
+import java.util.ArrayList;
+
 /**
  * Created by Guest on 4/28/16.
  */
@@ -10,7 +12,7 @@ public class Recipe {
     private String mTitle;
     private String mImageUrl;
 
-Public Recipe() {}
+public Recipe() {}
 
 public Recipe(String title, String imageUrl) {
     this.mTitle = title;
