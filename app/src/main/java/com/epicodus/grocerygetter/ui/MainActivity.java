@@ -11,7 +11,10 @@ import android.widget.Button;
 
 import com.epicodus.grocerygetter.Constants;
 import com.epicodus.grocerygetter.R;
+import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -19,6 +22,7 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String TAG = MainActivity.class.getSimpleName();
     @Bind(R.id.recipeButton) Button mRecipeButton;
+    @Bind(R.id.myBinButton) Button mMyBinButton;
 
     private Firebase mFirebaseRef;
 
@@ -27,9 +31,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
+        mMyBinButton.setOnClickListener(this);
         mRecipeButton.setOnClickListener(this);
         mFirebaseRef = new Firebase(Constants.FIREBASE_URL);
+
+        mFirebaseRefListener = mFirebaseRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        })
     }
 
     @Override
@@ -38,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        inflater.inflate(R.menu.menu_search, menu);
         inflater.inflate(R.menu.menu_main, menu);
         return true;
+
     }
 
     @Override
@@ -66,9 +83,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if (v == mRecipeButton) {
-
             Intent intent = new Intent(MainActivity.this, NewRecipeActivity.class);
+            startActivity(intent);
+        }
 
+        if (v == mMyBinButton) {
+            Intent intent = new Intent(MainActivity.this, MyBinActivity.class);
             startActivity(intent);
         }
 
