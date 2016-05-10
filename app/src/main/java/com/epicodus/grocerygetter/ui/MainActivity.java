@@ -31,21 +31,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        mFirebaseRef = new Firebase(Constants.FIREBASE_URL);
         mMyBinButton.setOnClickListener(this);
         mRecipeButton.setOnClickListener(this);
-        mFirebaseRef = new Firebase(Constants.FIREBASE_URL);
 
-        mFirebaseRefListener = mFirebaseRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                String
-            }
 
-            @Override
-            public void onCancelled(FirebaseError firebaseError) {
 
-            }
-        })
     }
 
     @Override
