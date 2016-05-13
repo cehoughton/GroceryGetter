@@ -3,6 +3,7 @@ package com.epicodus.grocerygetter.ui;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -34,6 +35,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mFirebaseRef = new Firebase(Constants.FIREBASE_URL);
         mMyBinButton.setOnClickListener(this);
         mRecipeButton.setOnClickListener(this);
+
+        mFirebaseRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String bins = dataSnapshot.getValue().toString();
+                Log.d("bin list", bins);
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        });
 
 
 
@@ -78,10 +92,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         }
 
-        if (v == mMyBinButton) {
-            Intent intent = new Intent(MainActivity.this, MyBinActivity.class);
-            startActivity(intent);
-        }
+//        if (v == mMyBinButton) {
+//            Intent intent = new Intent(MainActivity.this, MyBinActivity.class);
+//            startActivity(intent);
+//        }
 
     }
 }
