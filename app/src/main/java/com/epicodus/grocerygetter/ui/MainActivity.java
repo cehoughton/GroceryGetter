@@ -92,10 +92,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         }
 
-//        if (v == mMyBinButton) {
-//            Intent intent = new Intent(MainActivity.this, MyBinActivity.class);
-//            startActivity(intent);
-//        }
+        if (v == mMyBinButton) {
+            Intent intent = new Intent(MainActivity.this, MyBinActivity.class);
+            startActivity(intent);
+        }
 
     }
 }

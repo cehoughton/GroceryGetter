@@ -8,6 +8,10 @@ import android.widget.TextView;
 
 import com.epicodus.grocerygetter.R;
 import com.epicodus.grocerygetter.models.Bin;
+import com.epicodus.grocerygetter.ui.MyBinActivity;
+
+import org.parceler.Parcel;
+import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
@@ -19,9 +23,8 @@ public class BinViewHolder extends RecyclerView.ViewHolder {
    private static final int MAX_WIDTH = 200;
    private static final int MAX_HEIGHT = 200;
 
-    @Bind(R.id.binSizeTextView)
-    TextView mSizeTextView;
-    @Bind(R.id.binContentTextView) TextView mContentTextView;
+    @Bind(R.id.binSizeTextView) TextView mSizeTextView;
+//    @Bind(R.id.binSizeTextView) TextView mContentTextView;
 
     private Context mContext;
     private ArrayList<Bin> mBins = new ArrayList<>();
@@ -35,7 +38,10 @@ public class BinViewHolder extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View v) {
                 int itemPosition = getLayoutPosition();
-                Intent intent = new Intent(mContext, )
+                Intent intent = new Intent(mContext, MyBinActivity.class);
+                intent.putExtra("position", itemPosition + "");
+                intent.putExtra("bins", Parcels.wrap(mBins));
+                mContext.startActivity(intent);
             }
         });
     }

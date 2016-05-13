@@ -9,6 +9,9 @@ import com.epicodus.grocerygetter.models.Bin;
 import com.epicodus.grocerygetter.util.FirebaseRecyclerAdapter;
 import com.firebase.client.Query;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 /**
  * Created by Guest on 5/12/16.
  */
@@ -21,7 +24,7 @@ public class FirebaseBinListAdapter extends FirebaseRecyclerAdapter<BinViewHolde
     @Override
     public BinViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.bin_list_item, parent, false);
+                .inflate(R.layout.activity_my_bin, parent, false);
         return new BinViewHolder(view, getItems());
     }
 
