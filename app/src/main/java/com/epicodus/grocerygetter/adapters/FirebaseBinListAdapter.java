@@ -36,5 +36,17 @@ public class FirebaseBinListAdapter extends FirebaseRecyclerAdapter<BinViewHolde
     }
 
     @Override
-    protected void itemChanged(Bin oldItem)
+    protected void itemChanged(Bin oldItem, Bin newItem, String key, int position) {
+
+    }
+
+    @Override
+    protected void itemRemoved(Bin item, String key, int position) {
+
+    }
+
+    @Override
+    protected void itemMoved(Bin item, String key, int oldPosition, int newPosition) {
+
+    }
 }
