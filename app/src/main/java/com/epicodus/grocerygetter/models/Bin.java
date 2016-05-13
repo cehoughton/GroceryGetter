@@ -13,6 +13,7 @@ import java.util.List;
 public class Bin {
     String size;
     List<String> content = new ArrayList<>();
+    private String pushId;
 
     public Bin() {}
 
@@ -28,4 +29,14 @@ public class Bin {
     public List<String> getContent() {
         return content;
     }
+
+
+    public String getPushId() {
+        return pushId;
+    }
+
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
+    }
 }
+

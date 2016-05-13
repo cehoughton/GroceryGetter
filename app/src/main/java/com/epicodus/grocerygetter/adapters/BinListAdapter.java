@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.epicodus.grocerygetter.R;
 import com.epicodus.grocerygetter.models.Bin;
@@ -28,7 +29,7 @@ public class BinListAdapter extends RecyclerView.Adapter<BinViewHolder> {
 
     @Override
     public BinViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_my_bin, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.my_bin_list, parent, false);
 
         BinViewHolder viewHolder = new BinViewHolder(view, mBins);
         return viewHolder;
@@ -43,4 +44,7 @@ public class BinListAdapter extends RecyclerView.Adapter<BinViewHolder> {
     public int getItemCount() {
         return mBins.size();
     }
+
+
+
 }

@@ -24,7 +24,7 @@ public class FirebaseBinListAdapter extends FirebaseRecyclerAdapter<BinViewHolde
     @Override
     public BinViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.activity_my_bin, parent, false);
+                .inflate(R.layout.my_bin_list, parent, false);
         return new BinViewHolder(view, getItems());
     }
 

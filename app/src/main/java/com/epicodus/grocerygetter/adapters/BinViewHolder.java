@@ -23,8 +23,8 @@ public class BinViewHolder extends RecyclerView.ViewHolder {
    private static final int MAX_WIDTH = 200;
    private static final int MAX_HEIGHT = 200;
 
-    @Bind(R.id.binSizeTextView) TextView mSizeTextView;
-//    @Bind(R.id.binSizeTextView) TextView mContentTextView;
+    @Bind(R.id.binSizeTextView) TextView mBinSizeTextView;
+    @Bind(R.id.binContentTextView) TextView mBinContentTextView;
 
     private Context mContext;
     private ArrayList<Bin> mBins = new ArrayList<>();
@@ -44,5 +44,11 @@ public class BinViewHolder extends RecyclerView.ViewHolder {
                 mContext.startActivity(intent);
             }
         });
+    }
+
+    public void bindBin(Bin bin) {
+
+        mBinSizeTextView.setText(bin.getSize());
+        mBinContentTextView.setText(bin.getContent().get(0));
     }
 }
