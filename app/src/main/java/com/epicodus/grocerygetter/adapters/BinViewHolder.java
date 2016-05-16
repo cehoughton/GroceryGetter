@@ -20,8 +20,8 @@ import butterknife.ButterKnife;
 
 
 public class BinViewHolder extends RecyclerView.ViewHolder {
-   private static final int MAX_WIDTH = 200;
-   private static final int MAX_HEIGHT = 200;
+//   private static final int MAX_WIDTH = 200;
+//   private static final int MAX_HEIGHT = 200;
 
     @Bind(R.id.binSizeTextView) TextView mBinSizeTextView;
     @Bind(R.id.binContentTextView) TextView mBinContentTextView;

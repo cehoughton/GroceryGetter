@@ -36,18 +36,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mMyBinButton.setOnClickListener(this);
         mRecipeButton.setOnClickListener(this);
 
-        mFirebaseRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                String bins = dataSnapshot.getValue().toString();
-                Log.d("bin list", bins);
-            }
-
-            @Override
-            public void onCancelled(FirebaseError firebaseError) {
-
-            }
-        });
+//        mFirebaseRef.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                String bins = dataSnapshot.getValue().toString();
+//                Log.d("bin list", bins);
+//            }
+//
+//            @Override
+//            public void onCancelled(FirebaseError firebaseError) {
+//
+//            }
+//        });
 
 
 

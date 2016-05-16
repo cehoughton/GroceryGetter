@@ -23,7 +23,7 @@ import butterknife.ButterKnife;
 public class MyBinActivity extends AppCompatActivity {
     public static final String TAG = MainActivity.class.getSimpleName();
     private Query mQuery;
-    private Firebase mFirebaseRef;
+    private Firebase mFirebaseBinRef;
     private FirebaseBinListAdapter mAdapter;
 
     @Bind(R.id.recyclerView)
@@ -35,14 +35,14 @@ public class MyBinActivity extends AppCompatActivity {
         setContentView(R.layout.activity_my_bin);
         ButterKnife.bind(this);
 
-        mFirebaseRef = new Firebase(Constants.FIREBASE_URL_BINS);
+        mFirebaseBinRef = new Firebase(Constants.FIREBASE_URL_BINS);
 
         setUpFirebaseQuery();
         setUpRecyclerView();
     }
 
     private void setUpFirebaseQuery() {
-        String location = mFirebaseRef.toString();
+        String location = mFirebaseBinRef.toString();
         mQuery = new Firebase(location);
     }
 
