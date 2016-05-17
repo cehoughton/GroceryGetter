@@ -1,11 +1,15 @@
 package com.epicodus.grocerygetter.models;
 
+import android.support.annotation.Nullable;
+
 /**
  * Created by Guest on 5/4/16.
  */
 public class User {
     private String name;
     private String email;
+    @Nullable
+    private int binType;
 
     public User() {}
 

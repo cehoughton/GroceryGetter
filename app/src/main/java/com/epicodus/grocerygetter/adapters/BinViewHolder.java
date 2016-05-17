@@ -3,6 +3,7 @@ package com.epicodus.grocerygetter.adapters;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
 
@@ -49,6 +50,7 @@ public class BinViewHolder extends RecyclerView.ViewHolder {
     public void bindBin(Bin bin) {
 
         mBinSizeTextView.setText(bin.getSize());
-        mBinContentTextView.setText(bin.getContent().get(0));
+        String contents = TextUtils.join(", ", bin.getContents());
+        mBinContentTextView.setText(contents);
     }
 }

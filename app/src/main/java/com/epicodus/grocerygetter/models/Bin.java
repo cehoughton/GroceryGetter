@@ -12,31 +12,33 @@ import java.util.List;
 @Parcel
 public class Bin {
     String size;
-    List<String> content = new ArrayList<>();
-    private String pushId;
+    List<String> contents = new ArrayList<>();
+    private String pushID;
 
     public Bin() {}
 
     public Bin(String size, ArrayList<String> content) {
         this.size = size;
-        this.content = content;
+        this.contents = content;
     }
 
     public String getSize() {
         return size;
     }
 
-    public List<String> getContent() {
-        return content;
+    public List<String> getContents() {
+        return contents;
+    }
+
+    public String getPushID() {
+        return  pushID;
+    }
+
+    public void setPushID(String pushID) {
+        this.pushID = pushID;
     }
 
 
-    public String getPushId() {
-        return pushId;
-    }
 
-    public void setPushId(String pushId) {
-        this.pushId = pushId;
-    }
 }
 
