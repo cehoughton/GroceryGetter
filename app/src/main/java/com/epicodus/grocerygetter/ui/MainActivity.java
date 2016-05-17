@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static final String TAG = MainActivity.class.getSimpleName();
     @Bind(R.id.recipeButton) Button mRecipeButton;
     @Bind(R.id.myBinButton) Button mMyBinButton;
+    @Bind(R.id.adminButton) Button mAdminButton;
 
     private Firebase mFirebaseRef;
 
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mFirebaseRef = new Firebase(Constants.FIREBASE_URL);
         mMyBinButton.setOnClickListener(this);
         mRecipeButton.setOnClickListener(this);
+        mAdminButton.setOnClickListener(this);
 
 //        mFirebaseRef.addValueEventListener(new ValueEventListener() {
 //            @Override
@@ -94,6 +96,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if (v == mMyBinButton) {
             Intent intent = new Intent(MainActivity.this, MyBinActivity.class);
+            startActivity(intent);
+        }
+
+        if (v == mAdminButton) {
+            Intent intent = new Intent(MainActivity.this, LoadBinActivity.class);
             startActivity(intent);
         }
 
