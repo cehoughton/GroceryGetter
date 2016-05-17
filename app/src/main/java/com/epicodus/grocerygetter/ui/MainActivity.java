@@ -3,7 +3,6 @@ package com.epicodus.grocerygetter.ui;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -12,10 +11,7 @@ import android.widget.Button;
 
 import com.epicodus.grocerygetter.Constants;
 import com.epicodus.grocerygetter.R;
-import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
-import com.firebase.client.ValueEventListener;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -95,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         if (v == mMyBinButton) {
-            Intent intent = new Intent(MainActivity.this, MyBinActivity.class);
+            Intent intent = new Intent(MainActivity.this, MyBinListActivity.class);
             startActivity(intent);
         }
 

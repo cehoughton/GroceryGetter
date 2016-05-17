@@ -9,9 +9,9 @@ import android.widget.TextView;
 
 import com.epicodus.grocerygetter.R;
 import com.epicodus.grocerygetter.models.Bin;
-import com.epicodus.grocerygetter.ui.MyBinActivity;
+import com.epicodus.grocerygetter.ui.BinDetailActivity;
+import com.epicodus.grocerygetter.ui.MyBinListActivity;
 
-import org.parceler.Parcel;
 import org.parceler.Parcels;
 
 import java.util.ArrayList;
@@ -39,7 +39,7 @@ public class BinViewHolder extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View v) {
                 int itemPosition = getLayoutPosition();
-                Intent intent = new Intent(mContext, MyBinActivity.class);
+                Intent intent = new Intent(mContext, BinDetailActivity.class);
                 intent.putExtra("position", itemPosition + "");
                 intent.putExtra("bins", Parcels.wrap(mBins));
                 mContext.startActivity(intent);

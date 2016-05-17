@@ -32,8 +32,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.MyBinActivity" />
-        <activity android:name=".ui.LoadBinActivity"></activity>
+        <activity android:name=".ui.MyBinListActivity" />
+        <activity android:name=".ui.LoadBinActivity" />
+        <activity android:name=".ui.BinDetailActivity"></activity>
     </application>
 
 </manifest>

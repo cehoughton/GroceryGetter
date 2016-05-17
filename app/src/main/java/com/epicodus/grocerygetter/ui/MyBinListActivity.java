@@ -20,7 +20,7 @@ import com.firebase.client.Query;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class MyBinActivity extends AppCompatActivity {
+public class MyBinListActivity extends AppCompatActivity {
     public static final String TAG = MainActivity.class.getSimpleName();
     private Query mQuery;
     private Firebase mFirebaseBinRef;
