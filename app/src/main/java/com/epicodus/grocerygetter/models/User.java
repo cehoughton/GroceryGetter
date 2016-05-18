@@ -8,7 +8,14 @@ import android.support.annotation.Nullable;
 public class User {
     private String name;
     private String email;
-    @Nullable
+
+
+
+    public void setBinType( int binType) {
+        this.binType = binType;
+    }
+
+
     private int binType;
 
     public User() {}
@@ -25,4 +32,11 @@ public class User {
     public String getEmail() {
         return email;
     }
+
+
+
+    public int getBinType() {
+        return binType;
+    }
+
 }
