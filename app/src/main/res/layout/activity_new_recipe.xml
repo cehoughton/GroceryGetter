@@ -36,6 +36,16 @@
         android:layout_height="wrap_content"
         android:text="Find Recipes"
         android:id="@+id/findRecipesButton"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/editFoodText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="76dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Saved Recipes"
+        android:id="@+id/savedRecipesButton"
+        android:layout_below="@+id/findRecipesButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp" />
 </RelativeLayout>

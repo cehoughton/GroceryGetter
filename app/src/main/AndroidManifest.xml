@@ -34,7 +34,8 @@
         </activity>
         <activity android:name=".ui.MyBinListActivity" />
         <activity android:name=".ui.LoadBinActivity" />
-        <activity android:name=".ui.BinDetailActivity"></activity>
+        <activity android:name=".ui.BinDetailActivity" />
+        <activity android:name=".ui.SavedRecipeListActivity"></activity>
     </application>
 
 </manifest>
