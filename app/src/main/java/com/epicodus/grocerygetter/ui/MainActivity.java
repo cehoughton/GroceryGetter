@@ -8,10 +8,14 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.epicodus.grocerygetter.Constants;
 import com.epicodus.grocerygetter.R;
+import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -34,18 +38,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mRecipeButton.setOnClickListener(this);
         mAdminButton.setOnClickListener(this);
 
-//        mFirebaseRef.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                String bins = dataSnapshot.getValue().toString();
-//                Log.d("bin list", bins);
-//            }
-//
-//            @Override
-//            public void onCancelled(FirebaseError firebaseError) {
-//
-//            }
-//        });
+        mFirebaseRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+            }
+
+
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        });
 
 
 
