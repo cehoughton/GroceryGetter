@@ -9,21 +9,34 @@ import java.util.ArrayList;
  */
 @Parcel
 public class Recipe {
-    private String mTitle;
-    private String mImageUrl;
+    String title;
+    String imageUrl;
 
-public Recipe() {}
 
-public Recipe(String title, String imageUrl) {
-    this.mTitle = title;
-    this.mImageUrl = imageUrl;
-}
+    private String pushId;
+
+    public Recipe() {
+    }
+
+    public Recipe(String title, String imageUrl) {
+        this.title = title;
+        this.imageUrl = imageUrl;
+    }
 
     public String getTitle() {
-        return mTitle;
+        return title;
     }
 
     public String getImageUrl() {
-        return mImageUrl;
+        return imageUrl;
+    }
+
+
+    public String getPushId() {
+        return pushId;
+    }
+
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
     }
 }
