@@ -8,7 +8,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.epicodus.grocerygetter.Constants;
 import com.epicodus.grocerygetter.R;
@@ -23,8 +22,8 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String TAG = MainActivity.class.getSimpleName();
     @Bind(R.id.recipeButton) Button mRecipeButton;
-    @Bind(R.id.myBinButton) Button mMyBinButton;
-    @Bind(R.id.adminButton) Button mAdminButton;
+    @Bind(R.id.chooseBinButton) Button mChooseBinButton;
+    @Bind(R.id.myBinbutton) Button mMyBinButton;
 
     private Firebase mFirebaseRef;
 
@@ -34,9 +33,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         mFirebaseRef = new Firebase(Constants.FIREBASE_URL);
-        mMyBinButton.setOnClickListener(this);
+        mChooseBinButton.setOnClickListener(this);
         mRecipeButton.setOnClickListener(this);
-        mAdminButton.setOnClickListener(this);
+        mMyBinButton.setOnClickListener(this);
 
         mFirebaseRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -95,13 +94,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         }
 
-        if (v == mMyBinButton) {
+        if (v == mChooseBinButton) {
             Intent intent = new Intent(MainActivity.this, MyBinListActivity.class);
             startActivity(intent);
         }
 
-        if (v == mAdminButton) {
-            Intent intent = new Intent(MainActivity.this, LoadBinActivity.class);
+        if (v == mMyBinButton) {
+            Intent intent = new Intent(MainActivity.this, SavedBinActivity.class);
             startActivity(intent);
         }
 

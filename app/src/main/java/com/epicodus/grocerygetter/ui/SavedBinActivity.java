@@ -2,6 +2,7 @@ package com.epicodus.grocerygetter.ui;
 
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,6 +11,7 @@ import android.util.Log;
 
 import com.epicodus.grocerygetter.Constants;
 import com.epicodus.grocerygetter.R;
+import com.epicodus.grocerygetter.adapters.BinPagerAdapter;
 import com.epicodus.grocerygetter.adapters.FirebaseBinListAdapter;
 import com.epicodus.grocerygetter.models.Bin;
 import com.epicodus.grocerygetter.models.User;
@@ -29,7 +31,9 @@ public class SavedBinActivity extends AppCompatActivity {
     private SharedPreferences mSharedPreferences;
     private int mBinID;
     private Bin mBin;
-
+    @Bind(R.id.viewPager)
+    ViewPager mViewPager;
+    private BinPagerAdapter adapterViewPager;
     @Bind(R.id.recyclerView)
     RecyclerView mRecyclerView;
 
@@ -58,6 +62,9 @@ public class SavedBinActivity extends AppCompatActivity {
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         mBin = dataSnapshot.getValue(Bin.class);
                         Log.d("Bin in SavedBinActivity", mBin.getSize());
+//                        adapterViewPager = new BinPagerAdapter(getSupportFragmentManager(), mBin);
+//                        mViewPager.setAdapter(adapterViewPager);
+                        setUpRecyclerView();
                     }
 
                     @Override
@@ -67,10 +74,13 @@ public class SavedBinActivity extends AppCompatActivity {
                 });
             }
 
-            @Override
-            public void onCancelled(FirebaseError firebaseError) {
-
+            private void setUpRecyclerView() {
+                mAdapter = new FirebaseBinListAdapter(mFirebaseBinRef, Bin.class);
+                mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+                mRecyclerView.setAdapter(mAdapter);
             }
+
+
         });
 
 
@@ -80,9 +90,5 @@ public class SavedBinActivity extends AppCompatActivity {
 
     }
 
-    private void setUpRecyclerView() {
-        mAdapter = new FirebaseBinListAdapter(mQuery, Bin.class);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mRecyclerView.setAdapter(mAdapter);
-    }
+
 }
