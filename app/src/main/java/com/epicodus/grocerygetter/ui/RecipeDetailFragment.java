@@ -67,8 +67,8 @@ public class RecipeDetailFragment extends Fragment implements View.OnClickListen
     public void onClick(View v) {
         if (v == mSaveRecipeButton) {
             String userUid = mSharedPreferences.getString(Constants.KEY_UID, null);
-            Firebase userRecipesFirebseRef = new Firebase(Constants.FIREBASE_URL_RECIPES).child(userUid);
-            Firebase pushRef = userRecipesFirebseRef.push();
+            Firebase userRecipesFirebaseRef = new Firebase(Constants.FIREBASE_URL_RECIPES).child(userUid);
+            Firebase pushRef = userRecipesFirebaseRef.push();
             String recipePushId = pushRef.getKey();
             mRecipe.setPushId(recipePushId);
             pushRef.setValue(mRecipe);

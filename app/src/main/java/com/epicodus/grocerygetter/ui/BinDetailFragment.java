@@ -66,7 +66,7 @@ public class BinDetailFragment extends Fragment implements View.OnClickListener 
             String uid = mainRef.getAuth().getUid();
             Firebase ref = new Firebase(Constants.FIREBASE_URL_USERS).child(uid);
             ref.child("binType").setValue(mBin.getPushID());
-;           Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
+           Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
         }
     }
 

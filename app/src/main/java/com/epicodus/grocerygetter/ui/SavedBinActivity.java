@@ -2,6 +2,7 @@ package com.epicodus.grocerygetter.ui;
 
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -31,11 +32,11 @@ public class SavedBinActivity extends AppCompatActivity {
     private SharedPreferences mSharedPreferences;
     private int mBinID;
     private Bin mBin;
-    @Bind(R.id.viewPager)
-    ViewPager mViewPager;
+   // @Bind(R.id.viewPager)
+   // ViewPager mViewPager;
     private BinPagerAdapter adapterViewPager;
-    @Bind(R.id.recyclerView)
-    RecyclerView mRecyclerView;
+   // @Bind(R.id.recyclerView)
+    //RecyclerView mRecyclerView;
 
 //    Firebase mainRef = new Firebase(Constants.FIREBASE_URL);
 //    String uid = mainRef.getAuth().getUid();
@@ -46,7 +47,7 @@ public class SavedBinActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_bin);
-        ButterKnife.bind(this);
+        //ButterKnife.bind(this);
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         String uid = mSharedPreferences.getString(Constants.KEY_UID, null);
         mFirebaseBinRef = new Firebase(Constants.FIREBASE_URL_USERS).child(uid);
@@ -61,10 +62,10 @@ public class SavedBinActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         mBin = dataSnapshot.getValue(Bin.class);
-                        Log.d("Bin in SavedBinActivity", mBin.getSize());
-//                        adapterViewPager = new BinPagerAdapter(getSupportFragmentManager(), mBin);
-//                        mViewPager.setAdapter(adapterViewPager);
-                        setUpRecyclerView();
+                        Log.d("Bin in SavedBinActivity", String.valueOf(mBin.getContents()));
+                       // adapterViewPager = new BinPagerAdapter(getSupportFragmentManager(), mBin);
+                       // mViewPager.setAdapter(adapterViewPager);
+                       // setUpRecyclerView();
                     }
 
                     @Override
@@ -74,12 +75,14 @@ public class SavedBinActivity extends AppCompatActivity {
                 });
             }
 
-            private void setUpRecyclerView() {
-                mAdapter = new FirebaseBinListAdapter(mFirebaseBinRef, Bin.class);
-                mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-                mRecyclerView.setAdapter(mAdapter);
-            }
+           // private void setUpRecyclerView() {
+             //   mAdapter = new FirebaseBinListAdapter(mFirebaseBinRef, Bin.class);
+              //  mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+               // mRecyclerView.setAdapter(mAdapter);
+           // }
 
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {}
 
         });
 
