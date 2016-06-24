@@ -16,7 +16,7 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.ProfileActivity">
+        <activity android:name=".ui.SavedBinActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.MainActivity" />
@@ -36,7 +36,7 @@
         <activity android:name=".ui.LoadBinActivity" />
         <activity android:name=".ui.BinDetailActivity" />
         <activity android:name=".ui.SavedRecipeListActivity" />
-        <activity android:name=".ui.SavedBinActivity"></activity>
+
     </application>
 
 </manifest>
